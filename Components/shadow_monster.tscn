@@ -6,17 +6,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k86i"]
 size = Vector2(8.90152, 13.5776)
 
-[node name="Shadow-Monster" type="CharacterBody2D"]
+[node name="PathFollow2D" type="PathFollow2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shadow_Monster" type="CharacterBody2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Shadow_Monster"]
 position = Vector2(29, 15)
 scale = Vector2(0.213082, 0.242255)
 texture = ExtResource("1_rfgpt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shadow_Monster"]
 position = Vector2(1.5, -2.5)
 scale = Vector2(5.28, 4.64)
 shape = SubResource("RectangleShape2D_0k86i")
 
-[node name="path-follow" type="Node2D" parent="."]
+[node name="path-follow" type="Node2D" parent="Shadow_Monster"]
 script = ExtResource("2_jyb16")

@@ -15,7 +15,9 @@ func _physics_process(delta):
 	if path.progress_ratio < 1.0:
 		move_on_path(delta)
 	else:
-		path.progress_ratio = 1.0
+		path.queue_free()
+		#path.progress_ratio = 0.0
+		print("shadow distryoed")
 
 func move_on_path(delta):
 	path.progress_ratio += 0.01 * speed * delta
