@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://86sc34n4fvg0"]
+
+[ext_resource type="Texture2D" uid="uid://b4b32w12x7h5n" path="res://Art/Shadow-Monster.png" id="1_rfgpt"]
+[ext_resource type="Script" path="res://Scripts/shadow-pathfollow.gd" id="2_jyb16"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k86i"]
+size = Vector2(8.90152, 13.5776)
+
+[node name="Shadow-Monster" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(29, 15)
+scale = Vector2(0.213082, 0.242255)
+texture = ExtResource("1_rfgpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -2.5)
+scale = Vector2(5.28, 4.64)
+shape = SubResource("RectangleShape2D_0k86i")
+
+[node name="path-follow" type="Node2D" parent="."]
+script = ExtResource("2_jyb16")
