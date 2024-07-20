@@ -12,6 +12,22 @@ var healing_aura: bool = false
 var grass_defense: bool = false
 var invisibility: bool = false
 
+# References to potion textures
+var textures = {
+	"red": preload("res://Art/icon.svg"),
+	"yellow": preload("res://Art/icon.svg"),
+	"blue": preload("res://Art/icon.svg"),
+	"green": preload("res://Art/icon.svg"),
+	"orange": preload("res://Art/icon.svg"),
+	"purple": preload("res://Art/icon.svg"),
+	"default": preload("res://Art/icon.svg")
+}
+
+func create_sprite() -> Sprite2D:
+	var sprite = Sprite2D.new()
+	sprite.texture = textures.get(name, textures["default"])
+	return sprite
+
 # Method to apply the potion effects to a monster
 func apply_to(monster):
 	monster.health += health_boost
