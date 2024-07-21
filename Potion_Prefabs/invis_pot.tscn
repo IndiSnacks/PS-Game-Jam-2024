@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cihext8demxwf"]
+
+[ext_resource type="Script" path="res://Scripts/potion_scripts/potion_stats/purple_script.gd" id="1_a6ibv"]
+[ext_resource type="Texture2D" uid="uid://dumkbpy58vd5d" path="res://Art/purple.png" id="2_js4hw"]
+
+[node name="Invis_Pot" type="Node2D"]
+script = ExtResource("1_a6ibv")
+
+[node name="Purple" type="Sprite2D" parent="."]
+position = Vector2(1240, -113)
+texture = ExtResource("2_js4hw")
