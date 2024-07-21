@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://r5h35h7s1fbg"]
+
+[ext_resource type="Texture2D" uid="uid://bxtmvpj680502" path="res://Art/Temp-Stage.png" id="1_e7pgg"]
+[ext_resource type="Script" path="res://Scripts/spawning_manager.gd" id="3_2a2m2"]
+[ext_resource type="PackedScene" uid="uid://dfcl7iyab062v" path="res://Components/knight.tscn" id="3_h451q"]
+
+[sub_resource type="Curve2D" id="Curve2D_qy3bs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2212, 853, -309.271, 184.247, 309.271, -184.247, -1567, 788, -253.339, 329.012, 253.339, -329.012, -846, -28, -250.049, 0, 250.049, 0, 466, -311, -85.5432, 230.308, 85.5432, -230.308, 1993, -380, 437.586, -39.4815, -437.586, 39.4815, 1516, -805, 3.29012, 184.247, -3.29012, -184.247, 766, -831, 0, 0, 0, 0, 2161, -973)
+}
+point_count = 8
+
+[node name="Sahil-Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(0.26, 0.26)
+
+[node name="Temp-stage" type="Sprite2D" parent="."]
+position = Vector2(-16.4999, -6.04515)
+scale = Vector2(2.15771, 1.21489)
+texture = ExtResource("1_e7pgg")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_qy3bs")
+
+[node name="Shadow_Spawner" type="Node2D" parent="."]
+position = Vector2(-2123, -1132)
+script = ExtResource("3_2a2m2")
+num_shadows = 10
+
+[node name="Button" type="Button" parent="Shadow_Spawner"]
+offset_left = 1808.0
+offset_top = 2093.0
+offset_right = 2448.0
+offset_bottom = 2283.0
+theme_override_font_sizes/font_size = 80
+text = "Spawn Shadow"
+
+[node name="TextEdit" type="TextEdit" parent="Shadow_Spawner"]
+layout_direction = 2
+offset_left = 2466.0
+offset_top = 2096.0
+offset_right = 2699.0
+offset_bottom = 2287.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 150
+text = "50
+"
+editable = false
+context_menu_enabled = false
+
+[node name="Damage_Manager" type="Node2D" parent="."]
+
+[node name="Kinght" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-1174, -5)
+scale = Vector2(0.994832, 1.00842)
+
+[node name="Kinght2" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-789, -327)
+
+[node name="Kinght3" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-384, -451)
+
+[node name="Kinght4" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-2043, 662)
+is_aoe = true
+
+[connection signal="button_down" from="Shadow_Spawner/Button" to="Shadow_Spawner" method="_on_button_button_down"]
