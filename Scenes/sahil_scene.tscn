@@ -30,17 +30,20 @@ script = ExtResource("3_2a2m2")
 num_shadows = 10
 
 [node name="Button" type="Button" parent="Shadow_Spawner"]
-offset_right = 631.0
-offset_bottom = 219.0
+offset_left = 1808.0
+offset_top = 2093.0
+offset_right = 2448.0
+offset_bottom = 2283.0
 theme_override_font_sizes/font_size = 80
 text = "Spawn Shadow"
 
 [node name="TextEdit" type="TextEdit" parent="Shadow_Spawner"]
 layout_direction = 2
-offset_left = 672.0
-offset_top = 24.0
-offset_right = 884.0
-offset_bottom = 227.0
+offset_left = 2466.0
+offset_top = 2096.0
+offset_right = 2699.0
+offset_bottom = 2287.0
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 150
 text = "50
 "
@@ -51,5 +54,16 @@ context_menu_enabled = false
 
 [node name="Kinght" parent="." instance=ExtResource("3_h451q")]
 position = Vector2(-1174, -5)
+scale = Vector2(0.994832, 1.00842)
+
+[node name="Kinght2" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-789, -327)
+
+[node name="Kinght3" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-384, -451)
+
+[node name="Kinght4" parent="." instance=ExtResource("3_h451q")]
+position = Vector2(-2043, 662)
+is_aoe = true
 
 [connection signal="button_down" from="Shadow_Spawner/Button" to="Shadow_Spawner" method="_on_button_button_down"]
