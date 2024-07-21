@@ -1,25 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://86sc34n4fvg0"]
+[gd_scene load_steps=6 format=3 uid="uid://86sc34n4fvg0"]
 
 [ext_resource type="Texture2D" uid="uid://b4b32w12x7h5n" path="res://Art/Shadow-Monster.png" id="1_rfgpt"]
 [ext_resource type="Script" path="res://Scripts/shadow-pathfollow.gd" id="2_jyb16"]
+[ext_resource type="Script" path="res://Scripts/health-manager.gd" id="3_bcfk1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k86i"]
 size = Vector2(8.90152, 13.5776)
 
-[node name="PathFollow2D" type="PathFollow2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7y6h6"]
+size = Vector2(184, 251)
 
-[node name="Shadow_Monster" type="CharacterBody2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" groups=["shadow"]]
+loop = false
+
+[node name="Shadow_Monster" type="CharacterBody2D" parent="." groups=["shadow"]]
 scale = Vector2(4, 4)
 
-[node name="Sprite2D" type="Sprite2D" parent="Shadow_Monster"]
+[node name="Sprite2D" type="Sprite2D" parent="Shadow_Monster" groups=["shadow"]]
 position = Vector2(29, 15)
 scale = Vector2(0.213082, 0.242255)
 texture = ExtResource("1_rfgpt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shadow_Monster"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shadow_Monster" groups=["shadow"]]
 position = Vector2(1.5, -2.5)
 scale = Vector2(5.28, 4.64)
 shape = SubResource("RectangleShape2D_0k86i")
 
-[node name="path-follow" type="Node2D" parent="Shadow_Monster"]
+[node name="Path-Follow" type="Node2D" parent="Shadow_Monster" groups=["shadow"]]
 script = ExtResource("2_jyb16")
+speed = 5.0
+
+[node name="Hit_Box" type="Area2D" parent="Shadow_Monster/Path-Follow" groups=["shadow"]]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("3_bcfk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shadow_Monster/Path-Follow/Hit_Box" groups=["shadow"]]
+position = Vector2(7, -9.5)
+shape = SubResource("RectangleShape2D_7y6h6")
+debug_color = Color(0.999895, 0, 0.0972055, 0.42)

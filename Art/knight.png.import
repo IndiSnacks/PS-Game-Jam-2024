@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ywq2iqm7aeu"
-path="res://.godot/imported/Screenshot 2024-07-19 at 6.49.59 PM.jpg-49b4d480d261170a3e06154aa589d6d1.ctex"
+uid="uid://yo0kcntxnj72"
+path="res://.godot/imported/knight.png-db86396fac5f71a2f3bf900c6d6dbf0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Screenshot 2024-07-19 at 6.49.59 PM.jpg"
-dest_files=["res://.godot/imported/Screenshot 2024-07-19 at 6.49.59 PM.jpg-49b4d480d261170a3e06154aa589d6d1.ctex"]
+source_file="res://Art/knight.png"
+dest_files=["res://.godot/imported/knight.png-db86396fac5f71a2f3bf900c6d6dbf0b.ctex"]
 
 [params]
 
