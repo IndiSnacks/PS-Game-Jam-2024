@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://slwfdw8vxp7b"]
+
+[ext_resource type="Texture2D" uid="uid://y5nbljxahv5a" path="res://Art/Title-Screne.png" id="1_s243q"]
+[ext_resource type="Texture2D" uid="uid://dj2idi10i158h" path="res://Art/start.png" id="2_bt1yq"]
+[ext_resource type="Script" path="res://Scripts/scene-manager.gd" id="3_h5e35"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grooy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Start-scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(0.26, 0.26)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2192.0
+offset_top = -1226.0
+offset_right = 2199.0
+offset_bottom = 1243.0
+texture = ExtResource("1_s243q")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -1361.0
+offset_top = -809.0
+offset_right = 1379.0
+offset_bottom = 1239.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_grooy")
+icon = ExtResource("2_bt1yq")
+
+[node name="Scene_Manager" type="Node2D" parent="."]
+position = Vector2(-1361, -809)
+script = ExtResource("3_h5e35")
+
+[connection signal="button_down" from="Button" to="Scene_Manager" method="_on_button_button_down"]

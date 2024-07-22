@@ -47,7 +47,7 @@ offset_right = 89.0
 offset_bottom = -138.0
 theme_override_styles/background = SubResource("StyleBoxFlat_3irmy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_82ymn")
-step = 1.0
+value = 3.0
 rounded = true
 show_percentage = false
 

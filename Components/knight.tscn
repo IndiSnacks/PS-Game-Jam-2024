@@ -9,12 +9,15 @@ radius = 270.276
 
 [node name="Kinght" type="Area2D" groups=["knight"]]
 script = ExtResource("1_qi8js")
+damage_speed = 1.0
+damage_amount = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["knight"]]
 shape = SubResource("CircleShape2D_jempc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["knight"]]
-position = Vector2(52, 106)
+position = Vector2(97, 100)
+scale = Vector2(0.475342, 0.475342)
 texture = ExtResource("1_qake3")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]

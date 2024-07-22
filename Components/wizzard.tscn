@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://w8h1g6lj5a07"]
+
+[ext_resource type="Script" path="res://Scripts/damage_dealer.gd" id="1_avr47"]
+[ext_resource type="Texture2D" uid="uid://ctkcn0s5dwvyv" path="res://Art/wizzard.png" id="2_tah37"]
+[ext_resource type="Texture2D" uid="uid://bcsauqoi2tbmb" path="res://Art/hit_radius.png" id="3_g1dm3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2btk"]
+radius = 976.008
+
+[node name="Wizzard" type="Area2D"]
+script = ExtResource("1_avr47")
+damage_speed = 0.1
+damage_amount = 0.05
+is_aoe = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2btk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(374, -90)
+scale = Vector2(0.689453, 0.689453)
+texture = ExtResource("2_tah37")
+
+[node name="AOE_intdicator" type="Sprite2D" parent="."]
+position = Vector2(12, 20)
+scale = Vector2(9.81, 9.81)
+texture = ExtResource("3_g1dm3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

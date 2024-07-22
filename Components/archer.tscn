@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://v8mecd3jjdx7"]
+
+[ext_resource type="Script" path="res://Scripts/damage_dealer.gd" id="1_silbm"]
+[ext_resource type="Texture2D" uid="uid://b7x55m0bv4ksm" path="res://Art/archer.png" id="2_k23q8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p14wi"]
+radius = 3825.05
+
+[node name="archer" type="Area2D"]
+script = ExtResource("1_silbm")
+damage_speed = 1.0
+damage_amount = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p14wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(418, 300)
+scale = Vector2(0.752441, 0.681641)
+texture = ExtResource("2_k23q8")
+
+[node name="AOE_radius" type="Sprite2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

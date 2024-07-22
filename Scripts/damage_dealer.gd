@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var damage_speed = 0.5
-@export var damage_amount = 1
+@export var damage_amount = 0.0
 @export var is_aoe = false
 
 var shadow_queue = []

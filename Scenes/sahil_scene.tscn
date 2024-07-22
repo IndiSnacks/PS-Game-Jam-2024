@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://r5h35h7s1fbg"]
+[gd_scene load_steps=7 format=3 uid="uid://r5h35h7s1fbg"]
 
 [ext_resource type="Texture2D" uid="uid://bxtmvpj680502" path="res://Art/Temp-Stage.png" id="1_e7pgg"]
 [ext_resource type="Script" path="res://Scripts/spawning_manager.gd" id="3_2a2m2"]
 [ext_resource type="PackedScene" uid="uid://dfcl7iyab062v" path="res://Components/knight.tscn" id="3_h451q"]
+[ext_resource type="PackedScene" uid="uid://w8h1g6lj5a07" path="res://Components/wizzard.tscn" id="4_jg6rq"]
+[ext_resource type="PackedScene" uid="uid://v8mecd3jjdx7" path="res://Components/archer.tscn" id="5_adykt"]
 
 [sub_resource type="Curve2D" id="Curve2D_qy3bs"]
 _data = {
@@ -52,18 +54,13 @@ context_menu_enabled = false
 
 [node name="Damage_Manager" type="Node2D" parent="."]
 
+[node name="Wizzard" parent="." instance=ExtResource("4_jg6rq")]
+position = Vector2(1261, -451)
+
 [node name="Kinght" parent="." instance=ExtResource("3_h451q")]
-position = Vector2(-1174, -5)
-scale = Vector2(0.994832, 1.00842)
+position = Vector2(-328, -422)
 
-[node name="Kinght2" parent="." instance=ExtResource("3_h451q")]
-position = Vector2(-789, -327)
-
-[node name="Kinght3" parent="." instance=ExtResource("3_h451q")]
-position = Vector2(-384, -451)
-
-[node name="Kinght4" parent="." instance=ExtResource("3_h451q")]
-position = Vector2(-2043, 662)
-is_aoe = true
+[node name="archer" parent="." instance=ExtResource("5_adykt")]
+position = Vector2(1473, 1022)
 
 [connection signal="button_down" from="Shadow_Spawner/Button" to="Shadow_Spawner" method="_on_button_button_down"]
