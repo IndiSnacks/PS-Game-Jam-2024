@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dh4hu6mq2n8nq"]
 
-[ext_resource type="Script" path="res://Scripts/potion_scripts/potion_stats/green_pot.gd" id="1_q4oup"]
-[ext_resource type="Texture2D" uid="uid://beqaidbcb4jee" path="res://Art/green.png" id="2_55vqg"]
+[ext_resource type="Texture2D" uid="uid://dl4ymqiuq357n" path="res://Art/green.jpg" id="1_7xa8d"]
+[ext_resource type="Script" path="res://Scripts/drag.gd" id="3_env23"]
 
 [node name="Grass_Pot" type="Node2D"]
-script = ExtResource("1_q4oup")
 
-[node name="Green" type="Sprite2D" parent="."]
-position = Vector2(1160, 7)
-texture = ExtResource("2_55vqg")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7xa8d")
+script = ExtResource("3_env23")

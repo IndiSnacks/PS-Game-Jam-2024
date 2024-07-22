@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://5x8ncbxropkc"]
+
+[ext_resource type="Texture2D" uid="uid://cjb3bfr2nx02h" path="res://Art/red.png" id="1_bcj80"]
+[ext_resource type="Script" path="res://Scripts/potion_scripts/potion.gd" id="2_4aukn"]
+[ext_resource type="Script" path="res://Scripts/potion_scripts/potion_manager.gd" id="3_b2fgj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bcj80")
+script = ExtResource("2_4aukn")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_b2fgj")
+
+[node name="Node2D2" type="Node2D" parent="."]

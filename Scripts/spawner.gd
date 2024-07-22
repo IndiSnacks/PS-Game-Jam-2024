@@ -4,11 +4,11 @@ extends Node
 @export var prefab_scenes: Array[PackedScene]
 
 # Time interval in seconds between spawns
-@export var spawn_interval: float = 5.0
+@export var spawn_interval: float = 2.5  # Adjust this value as needed
 
 # Area within which to spawn prefabs
-@export var spawn_area_min: Vector2 = Vector2(-100, -100)
-@export var spawn_area_max: Vector2 = Vector2(100, 100)
+@export var spawn_area_min: Vector2 = Vector2(-1000, -1000)
+@export var spawn_area_max: Vector2 = Vector2(1000, 1000)
 
 func _ready():
 	randomize()

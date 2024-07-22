@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c73tuyli16sqi"]
+[gd_scene load_steps=3 format=3 uid="uid://c73tuyli16sqi"]
 
-[ext_resource type="Texture2D" uid="uid://bh3llg5obwji5" path="res://Art/blue.png" id="1_qxafd"]
+[ext_resource type="Texture2D" uid="uid://ckukmdj40w13l" path="res://Art/blue.jpg" id="1_82uig"]
+[ext_resource type="Script" path="res://Scripts/drag.gd" id="3_ttehb"]
 
 [node name="Ice_Pot" type="Node2D"]
 
-[node name="Blue" type="Sprite2D" parent="."]
-position = Vector2(1104, 143)
-texture = ExtResource("1_qxafd")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_82uig")
+script = ExtResource("3_ttehb")

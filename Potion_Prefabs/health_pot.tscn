@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ywi4p23q0b64"]
 
-[ext_resource type="Script" path="res://Scripts/potion_scripts/potion_stats/red_potion.gd" id="1_40b5o"]
-[ext_resource type="Texture2D" uid="uid://cjb3bfr2nx02h" path="res://Art/red.png" id="2_18lwx"]
+[ext_resource type="Texture2D" uid="uid://dtwacolphdcyj" path="res://Art/red.jpg" id="1_pc8un"]
+[ext_resource type="Script" path="res://Scripts/drag.gd" id="3_ucmex"]
 
 [node name="Health_Pot" type="Node2D"]
-script = ExtResource("1_40b5o")
 
-[node name="Red" type="Sprite2D" parent="."]
-position = Vector2(1372, 1327)
-texture = ExtResource("2_18lwx")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_pc8un")
+script = ExtResource("3_ucmex")

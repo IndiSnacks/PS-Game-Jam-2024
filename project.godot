@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="PS Game Jam 2024"
+run/main_scene="res://Potion_Prefabs/pot_spawner.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://Art/icon.svg"
 
 [rendering]
 

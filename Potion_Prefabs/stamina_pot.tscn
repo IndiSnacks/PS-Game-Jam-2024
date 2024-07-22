@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5pdjupbsefyc"]
 
-[ext_resource type="Script" path="res://Scripts/potion_scripts/potion_stats/yellow_potion.gd" id="1_uvnkw"]
-[ext_resource type="Texture2D" uid="uid://cmf1881j7g2ej" path="res://Art/yellow.png" id="2_ll6li"]
+[ext_resource type="Texture2D" uid="uid://cl80ceo46wlpq" path="res://Art/yellow.jpg" id="1_f04io"]
+[ext_resource type="Script" path="res://Scripts/drag.gd" id="2_ow24c"]
 
 [node name="Stamina_Pot" type="Node2D"]
-script = ExtResource("1_uvnkw")
 
-[node name="Yellow" type="Sprite2D" parent="."]
-position = Vector2(952, 479)
-texture = ExtResource("2_ll6li")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_f04io")
+script = ExtResource("2_ow24c")
