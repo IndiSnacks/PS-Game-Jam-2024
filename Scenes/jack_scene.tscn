@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dor54wbk2g1jr"]
+
+[ext_resource type="Texture2D" path="res://Art/easy_stage.png" id="1_sc7ld"]
+[ext_resource type="Script" path="res://Scripts/spawning_manager.gd" id="2_an08f"]
+[ext_resource type="PackedScene" uid="uid://d06kfdgdnn30r" path="res://Components/priest.tscn" id="4_dsnyt"]
+
+[sub_resource type="Curve2D" id="Curve2D_m2n8j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -536, -1273, 0, 0, 0, 0, -512, -829, 0, 0, 0, 0, -1544, -801, 0, 0, 0, 0, -1504, 671, 0, 0, 0, 0, 1496, 627, 0, 0, 0, 0, 1360, -849, 0, 0, 0, 0, 520, -853, 0, 0, 0, 0, 508, -1233)
+}
+point_count = 8
+
+[node name="Jack-Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(0.26, 0.26)
+
+[node name="Temp-stage" type="Sprite2D" parent="."]
+position = Vector2(-16.4999, -6.04515)
+scale = Vector2(2.15771, 1.21489)
+texture = ExtResource("1_sc7ld")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_m2n8j")
+
+[node name="Shadow_Spawner" type="Node2D" parent="."]
+position = Vector2(-2123, -1132)
+script = ExtResource("2_an08f")
+num_shadows = 10
+
+[node name="Button" type="Button" parent="Shadow_Spawner"]
+offset_left = 1808.0
+offset_top = 2093.0
+offset_right = 2448.0
+offset_bottom = 2283.0
+theme_override_font_sizes/font_size = 80
+text = "Spawn Shadow"
+
+[node name="TextEdit" type="TextEdit" parent="Shadow_Spawner"]
+layout_direction = 2
+offset_left = 2466.0
+offset_top = 2096.0
+offset_right = 2699.0
+offset_bottom = 2287.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 150
+text = "50
+"
+editable = false
+context_menu_enabled = false
+
+[node name="Damage_Manager" type="Node2D" parent="."]
+
+[node name="priest" parent="." instance=ExtResource("4_dsnyt")]
+position = Vector2(1336, -1032)
+
+[connection signal="button_down" from="Shadow_Spawner/Button" to="Shadow_Spawner" method="_on_button_button_down"]
