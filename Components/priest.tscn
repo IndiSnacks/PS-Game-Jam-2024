@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d06kfdgdnn30r"]
+[gd_scene load_steps=4 format=3 uid="uid://wji5kg04dw5b"]
 
 [ext_resource type="Script" path="res://Scripts/damage_dealer.gd" id="1_j36fn"]
-[ext_resource type="Texture2D" uid="uid://bwryo6nkg1jkf" path="res://Art/priest.png" id="2_ameas"]
+[ext_resource type="Texture2D" path="res://Art/priest.png" id="2_ameas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kib8k"]
 size = Vector2(264, 809.5)
 
 [node name="priest" type="Area2D"]
 script = ExtResource("1_j36fn")
-damage_speed = 1.0
+damage_speed = 0.1
 damage_amount = 100.0
+charge_increment = 0.5
 is_charge = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

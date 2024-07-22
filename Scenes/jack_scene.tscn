@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dor54wbk2g1jr"]
+[gd_scene load_steps=5 format=3 uid="uid://ck17w46v603ag"]
 
-[ext_resource type="Texture2D" path="res://Art/easy_stage.png" id="1_sc7ld"]
+[ext_resource type="Texture2D" uid="uid://bwtbu06giloqr" path="res://Art/easy_stage.png" id="1_kp4wl"]
 [ext_resource type="Script" path="res://Scripts/spawning_manager.gd" id="2_an08f"]
-[ext_resource type="PackedScene" uid="uid://d06kfdgdnn30r" path="res://Components/priest.tscn" id="4_dsnyt"]
+[ext_resource type="PackedScene" uid="uid://wji5kg04dw5b" path="res://Components/priest.tscn" id="3_ri642"]
 
-[sub_resource type="Curve2D" id="Curve2D_m2n8j"]
+[sub_resource type="Curve2D" id="Curve2D_hmydw"]
+bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -536, -1273, 0, 0, 0, 0, -512, -829, 0, 0, 0, 0, -1544, -801, 0, 0, 0, 0, -1504, 671, 0, 0, 0, 0, 1496, 627, 0, 0, 0, 0, 1360, -849, 0, 0, 0, 0, 520, -853, 0, 0, 0, 0, 508, -1233)
+"points": PackedVector2Array(0, 0, 0, 0, -511, -1214, 0, 0, 0, 0, -484, -807, 0, 0, 0, 0, -1580, -791, 0, 0, 0, 0, -1494, 689, 0, 0, 0, 0, 1505, 630, 0, 0, 0, 0, 1350, -909, 0, 0, 0, 0, 521, -850, 0, 0, 0, 0, 494, -1240)
 }
 point_count = 8
 
-[node name="Jack-Scene" type="Node2D"]
+[node name="Sahil-Scene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
@@ -19,10 +20,10 @@ zoom = Vector2(0.26, 0.26)
 [node name="Temp-stage" type="Sprite2D" parent="."]
 position = Vector2(-16.4999, -6.04515)
 scale = Vector2(2.15771, 1.21489)
-texture = ExtResource("1_sc7ld")
+texture = ExtResource("1_kp4wl")
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_m2n8j")
+curve = SubResource("Curve2D_hmydw")
 
 [node name="Shadow_Spawner" type="Node2D" parent="."]
 position = Vector2(-2123, -1132)
@@ -52,7 +53,7 @@ context_menu_enabled = false
 
 [node name="Damage_Manager" type="Node2D" parent="."]
 
-[node name="priest" parent="." instance=ExtResource("4_dsnyt")]
-position = Vector2(1336, -1032)
+[node name="priest" parent="." instance=ExtResource("3_ri642")]
+position = Vector2(1342, -1016)
 
 [connection signal="button_down" from="Shadow_Spawner/Button" to="Shadow_Spawner" method="_on_button_button_down"]
