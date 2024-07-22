@@ -10,7 +10,7 @@ size = Vector2(264, 809.5)
 script = ExtResource("1_j36fn")
 damage_speed = 0.1
 damage_amount = 100.0
-charge_increment = 0.5
+charge_increment = 0.4
 is_charge = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
