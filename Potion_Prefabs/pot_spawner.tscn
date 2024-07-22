@@ -1,13 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqc5k6l0pkr4t"]
+[gd_scene load_steps=3 format=3 uid="uid://dqc5k6l0pkr4t"]
 
 [ext_resource type="Script" path="res://Scripts/spawner.gd" id="1_itbeo"]
-[ext_resource type="PackedScene" uid="uid://ywi4p23q0b64" path="res://Potion_Prefabs/health_pot.tscn" id="2_wv5ms"]
-[ext_resource type="PackedScene" uid="uid://c5pdjupbsefyc" path="res://Potion_Prefabs/stamina_pot.tscn" id="3_t0gbd"]
-[ext_resource type="PackedScene" uid="uid://c73tuyli16sqi" path="res://Potion_Prefabs/ice_pot.tscn" id="4_f8ape"]
-[ext_resource type="PackedScene" uid="uid://c1cryxawqavc0" path="res://Potion_Prefabs/healing_pot.tscn" id="5_njob3"]
-[ext_resource type="PackedScene" uid="uid://dh4hu6mq2n8nq" path="res://Potion_Prefabs/grass_pot.tscn" id="6_ednwe"]
 [ext_resource type="PackedScene" uid="uid://cihext8demxwf" path="res://Potion_Prefabs/invis_pot.tscn" id="7_hcmpg"]
 
 [node name="Pot_Spawner" type="Node2D"]
 script = ExtResource("1_itbeo")
-prefab_scenes = Array[PackedScene]([ExtResource("2_wv5ms"), ExtResource("3_t0gbd"), ExtResource("4_f8ape"), ExtResource("5_njob3"), ExtResource("6_ednwe"), ExtResource("7_hcmpg")])
+prefab_scenes = Array[PackedScene]([ExtResource("7_hcmpg")])
