@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3a4lygpv45td"]
+
+[ext_resource type="Texture2D" uid="uid://dqbckju4gvw23" path="res://Art/purple_pot.png" id="1_6klge"]
+[ext_resource type="Script" path="res://Scripts/dragable.gd" id="2_x5ve1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w25qs"]
+radius = 116.017
+
+[node name="purple_pot" type="RigidBody2D" groups=["purple_pot"]]
+gravity_scale = 1.66533e-16
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["purple_pot"]]
+scale = Vector2(0.0991211, 0.0991211)
+texture = ExtResource("1_6klge")
+
+[node name="hit_box" type="Area2D" parent="." groups=["purple_pot"]]
+
+[node name="hit_box" type="CollisionShape2D" parent="hit_box" groups=["purple_pot"]]
+shape = SubResource("CircleShape2D_w25qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["purple_pot"]]
+shape = SubResource("CircleShape2D_w25qs")
+
+[node name="Button" type="Button" parent="." groups=["purple_pot"]]
+offset_left = -121.0
+offset_top = -121.0
+offset_right = 121.0
+offset_bottom = 122.0
+
+[node name="dragable" type="Node2D" parent="." groups=["purple_pot"]]
+script = ExtResource("2_x5ve1")
+
+[connection signal="button_down" from="Button" to="dragable" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="dragable" method="_on_button_button_up"]

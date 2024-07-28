@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxib8y3ngj6j7"]
+
+[ext_resource type="Script" path="res://Components/potion_hitbox.gd" id="1_t64ka"]
+[ext_resource type="Texture2D" uid="uid://het18unwh8di" path="res://Art/red_pot.png" id="1_vtk5m"]
+[ext_resource type="Script" path="res://Scripts/dragable.gd" id="2_ry1cd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kw3rg"]
+radius = 122.262
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["red_pot"]]
+position = Vector2(-124, -127)
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 1.66533e-16
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." groups=["red_pot"]]
+shape = SubResource("CircleShape2D_kw3rg")
+
+[node name="hit_box" type="Area2D" parent="." groups=["red_pot"]]
+script = ExtResource("1_t64ka")
+
+[node name="hit_box_shape" type="CollisionShape2D" parent="hit_box" groups=["red_pot"]]
+shape = SubResource("CircleShape2D_kw3rg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["red_pot"]]
+position = Vector2(-2, -1)
+scale = Vector2(0.0991211, 0.0991211)
+texture = ExtResource("1_vtk5m")
+
+[node name="Button" type="Button" parent="." groups=["red_pot"]]
+offset_left = -124.0
+offset_top = -127.0
+offset_right = 132.0
+offset_bottom = 125.0
+
+[node name="dragable" type="Node2D" parent="." groups=["red_pot"]]
+script = ExtResource("2_ry1cd")
+
+[connection signal="area_entered" from="hit_box" to="hit_box" method="_on_area_entered"]
+[connection signal="button_down" from="Button" to="dragable" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="dragable" method="_on_button_button_up"]

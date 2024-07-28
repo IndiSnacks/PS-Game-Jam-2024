@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4vj4kxmmn7ay"]
+
+[ext_resource type="Texture2D" uid="uid://5rt1fev3n6tu" path="res://Art/blue_pot.png" id="1_hpu82"]
+[ext_resource type="Script" path="res://Scripts/combine_potions.gd" id="2_7oxm6"]
+[ext_resource type="Script" path="res://Scripts/dragable.gd" id="2_q1dxu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w25qs"]
+radius = 116.017
+
+[node name="blue_pot" type="RigidBody2D" groups=["blue_pot"]]
+gravity_scale = 1.66533e-16
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["blue_pot"]]
+scale = Vector2(0.0991211, 0.0991211)
+texture = ExtResource("1_hpu82")
+
+[node name="hit_box" type="Area2D" parent="." groups=["blue_pot"]]
+script = ExtResource("2_7oxm6")
+
+[node name="hit_box" type="CollisionShape2D" parent="hit_box" groups=["blue_pot"]]
+shape = SubResource("CircleShape2D_w25qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["blue_pot"]]
+shape = SubResource("CircleShape2D_w25qs")
+
+[node name="Button" type="Button" parent="." groups=["blue_pot"]]
+offset_left = -121.0
+offset_top = -121.0
+offset_right = 121.0
+offset_bottom = 122.0
+
+[node name="dragable" type="Node2D" parent="." groups=["blue_pot"]]
+script = ExtResource("2_q1dxu")
+
+[connection signal="button_down" from="Button" to="dragable" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="dragable" method="_on_button_button_up"]
