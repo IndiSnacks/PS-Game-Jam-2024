@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxib8y3ngj6j7"]
 
-[ext_resource type="Script" path="res://Components/potion_hitbox.gd" id="1_t64ka"]
+[ext_resource type="Script" path="res://Scripts/potion_hitbox.gd" id="1_7ukaq"]
 [ext_resource type="Texture2D" uid="uid://het18unwh8di" path="res://Art/red_pot.png" id="1_vtk5m"]
 [ext_resource type="Script" path="res://Scripts/dragable.gd" id="2_ry1cd"]
 
@@ -17,7 +17,7 @@ gravity_scale = 1.66533e-16
 shape = SubResource("CircleShape2D_kw3rg")
 
 [node name="hit_box" type="Area2D" parent="." groups=["red_pot"]]
-script = ExtResource("1_t64ka")
+script = ExtResource("1_7ukaq")
 
 [node name="hit_box_shape" type="CollisionShape2D" parent="hit_box" groups=["red_pot"]]
 shape = SubResource("CircleShape2D_kw3rg")
